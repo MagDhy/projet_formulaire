@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <title>Document</title>
+        <!--* Style honney pot -->
+        <style>
+            .hide-robot{
+                display:none;
+            }
+        </style>
+    </head>
+    <body background="assets/images/bg-registration-form-7.jpg">
+        <div class="wrapper">
+            <div class="inner">
+
+                <form class="contact1-form" method="post" action="formulaire.php" >
+
+                    <h3>Contact us</h3>
+                    <p>You want to say something about our products or our service ? Send us a message!</p>
+
+                    <div class="wrap-input1">    
+                        <input type="text"  name="firstName" id="firstName" class="form-control" value="" required><br/>
+                        <span>Firstname</span>
+                        <span class="border"></span>
+                        <span class="error"><?php echo $firstNameErr;?></span><br/>
+                    </div>
+
+                    <div class="wrap-input1">    
+                        <input type="text" name="lastName" id="lastName" class="form-control" value="" required><br/>
+                        <span>Lastname</span>
+                        <span class="border"></span>
+                        <span class="error"><?php echo $lastNameErr;?></span><br/>
+                    </div>
+
+                    <div class="wrap-input1">
+                        <input type="mail" name="mail" id="mail" class="form-control" value="" required><br/>
+                        <span>Email</span>
+                        <span class="border"></span>
+                        <span class="erro"><?php echo $mailErr;?></span><br/>
+                    </div>
+
+                    <div class="wrap-input1" id="divCountry">
+                        <span id="spanCountry">Country :</span>
+                        <select name="country" id="country" class="select-style">
+                            <option value="other country">Other country</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Luxemburg">Luxembourg</option>
+                            <option value="Nederlands">Nederlands</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Royaume-Unis">United-Kingdom</option>
+                        </select>
+                        <span class="border"></span>
+                        <span class="errer"><?php echo $countryErr;?></span>
+
+                    </div>
+
+                    <div class="wrap-input1">
+                        <br/>
+                        <div id="divGender">
+                            <h4 id="spanGender">Gender </h4>
+                            <div id="radiosGender">
+                                <input type="radio" name="gender" id="man"  value="M" required>
+                                <label for="man">M</label>
+                                <input type="radio" name="gender" id="woman" value="W" required>
+                                <label for="woman">W</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-input1">
+                        <div id="divSubject">
+                            <h4 id="spanSubject">Message's subject </h4>
+                            <select name="subjects" id="subjects-select" class="select-style">
+                                <option value="other">Other</option>
+                                <option value="PSCS">Post-sale customer service</option>
+                                <option value="recommendation">Recommandation</option>
+                                <option value="thank">Thank</option>
+                            </select>
+                        </div>
+                        
+                        <div id="divMessage">
+                            <h4 id="spanMessage">Message </h4>
+                            <textarea id="messageFree" name="messageFree" class="form-control" row="5" column="33" required></textarea><br/>
+                            <span class="border"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" name="submit" value="Send">
+                        Send
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </form>
+
+                <!----------------------------------------HONNEY POT--------------------------------------------------------->
+                <form method="post" action="../projet-formulaire/honey.php" id="my-form" class="hide-robot">
+                    <input name="honeyfirstname" type="text" id="honeyfirstname" class="hide-robot">        
+                    <input name="honeyname" type="text" id="honeyname" placeholder="Name" required><br>
+                    <input name="honeyemail" type="email" id="honeyemail" placeholder="Email" required><br>
+                    <textarea name="honeymessage" id="honeymessage" placeholder="Enter your message here" required></textarea><br>
+                    <input type="submit">
+                </form>
+
+            </div>
+        </div>
+    </body>
+
+</html>
